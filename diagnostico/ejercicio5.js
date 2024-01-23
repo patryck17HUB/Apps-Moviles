@@ -1,5 +1,5 @@
-let objeto{
+let objeto = {
     alto,
-    ancho;
-}
+    ancho
+};
 objeto.alto = 17
