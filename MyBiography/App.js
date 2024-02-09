@@ -2,16 +2,20 @@ import {View, Text, StyleSheet, SafeAreaView, ScrollView, Image} from 'react-nat
 import TextComponent from './components/TextXomponents';
 
 const App = () => {
-  return(
+  return (
     <SafeAreaView style={styles.container}>
+      <View style={styles.tituloContainer}>
+        <Text style={styles.title}> Mi biografía </Text>
+        <View style={styles.imageContainer}>
+          <Image style={styles.image} source={require('./assets/images/Geralt.jpg')} />
+        </View>
+      </View>
       <ScrollView>
-      <Text style={styles.title}> Mi biografia </Text>
-      <Image style={styles.image} source={require('./assets/images/Geralt.jpg')}/>
-      <TextComponent/>
+        <TextComponent />
       </ScrollView>
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -20,21 +24,29 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#487eb0',
+    backgroundColor: '#D6D6D6',
+    marginTop: 30,
+  },
+  tituloContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'black',
   },
   title: {
-    fontSize: 20,
+    fontSize: 40,
     fontWeight: 'bold',
+    marginRight: 20,
+    color: 'white',
   },
   image: {
     width: 100,
-    height: 100
+    height: 100,
+    borderRadius: 50,
   },
-  text: {
-    fontSize: 14,
-    fontWeight: 'normal',
-    color: '#dfe6e9',
-  }
+  imageContainer: {
+    flex: 1,
+    alignItems: 'flex',
+  },
 
 });
 
